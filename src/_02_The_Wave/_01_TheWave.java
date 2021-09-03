@@ -23,15 +23,18 @@ public class _01_TheWave {
 
 			String a = str.charAt(i) + "";
 			String oldStr = a;
-			if(Character.isAlphabetic(a.charAt(0))) {
-			a = a.toUpperCase();
-			oldStr = str.substring(0, 1) + a + str.substring(i + 1, str.length());
+			if (Character.isAlphabetic(a.charAt(0))){
+				a = a.toUpperCase(); 
+				oldStr = str.substring(0,i) + a + str.substring(i + 1, str.length());	
+				
+			}
+			if(Character.isWhitespace(oldStr.charAt(0)) == false){
+				waveStr.add(oldStr);
 			}
 			
-			waveStr.add(oldStr);
-
+			
 		}
-
+		System.out.println(waveStr);
 		return waveStr;
 	}
 }
